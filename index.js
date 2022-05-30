@@ -2,10 +2,14 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const koneksi = require('./config/database');
 const app = express();
+const cors = require('cors');
 const PORT = process.env.PORT || 5003;
 // set body parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+var cors = require('cors');
+app.use(cors());
 
 app.post("/api/comment", (req, res) => {
     const data = {...req.body};

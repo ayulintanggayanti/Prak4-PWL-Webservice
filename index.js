@@ -7,8 +7,7 @@ const PORT = process.env.PORT || 5003;
 // set body parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-
-var cors = require('cors');
+// set cors
 app.use(cors());
 
 app.post("/api/comment", (req, res) => {
